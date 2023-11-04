@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/controller/store_hive/operetions.dart';
 import 'package:todo_app/view/presentetion/home_page/home_page.dart';
 
 class SplashScreeen extends StatelessWidget {
@@ -6,6 +8,7 @@ class SplashScreeen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<CrudOpretion>(context,listen: false).getNotes();
     navigator(context);
 
     return Scaffold(
